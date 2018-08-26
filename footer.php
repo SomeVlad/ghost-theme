@@ -32,7 +32,7 @@
 
 			<div class="site-footer__copy site-copy">
 
-				<?php integer_footer_text(); ?>
+				<?php footer_text(); ?>
 
 			</div>
 

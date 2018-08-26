@@ -473,11 +473,6 @@ function integer_first_post_link() {
 /**
  * Displays Footer Text.
  */
-function integer_footer_text() {
-	printf(
-		/* Translators: 1: name of the theme, 2: Name of the theme shop. */
-		esc_html__( '%1$s theme by %2$s', 'integer' ),
-		'Integer',
-		'<a href="https://themepatio.com/">ThemePatio</a>'
-	);
+function footer_text() {
+	printf('Жив, курилка! 2018');
 }

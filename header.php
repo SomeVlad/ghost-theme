@@ -31,24 +31,6 @@
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
 			<nav class="site-header__menu primary-menu" role="navigation">
-				<button class="primary-menu__toggle menu-toggle" aria-haspopup="true" aria-expanded="false" aria-label="<?php esc_html_e( 'Menu', 'integer' ); ?>">
-					<?php
-						echo integer_get_svg( // wpcs: xss ok.
-							array(
-								'icon' => 'menu',
-								'class' => 'menu-toggle__icon menu-toggle__icon--menu',
-							)
-						);
-
-						echo integer_get_svg( // wpcs: xss ok.
-							array(
-								'icon' => 'close',
-								'class' => 'menu-toggle__icon menu-toggle__icon--close',
-							)
-						);
-					?>
-					<span class="menu-toggle__text"><?php esc_html_e( 'Menu', 'integer' ); ?></span>
-				</button>
 				<?php
 					wp_nav_menu(
 						array(

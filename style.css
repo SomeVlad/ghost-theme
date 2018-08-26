@@ -4,7 +4,7 @@ Theme URI:   https://themepatio.com/themes/integer/
 Author:      Vlad Samoylov
 Author URI:  https://vladsamoylov.com/
 Description: Integer is a blogging WordPress theme that features a single-column layout, clean typography, and overall minimalistic style.
-Version:     0.0.1
+Version:     0.0.2
 License:     GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: integer
@@ -191,9 +191,8 @@ input[type='search']::-webkit-search-decoration {
 
 fieldset {
 	margin: 0 0 1.5em;
-	padding: em_minus_px(0.75em, 2px) 1em 0;
-	border: 2px solid;
-	border-color: var(--color__gray);
+	padding: calc(0.75em - 2px) 1em;
+	border: 2px solid var(--color__gray);
 	border-radius: 3px;
 }
 
@@ -219,6 +218,12 @@ th {
 	padding: 0;
 }
 
+@font-face {
+    font-family: 'xprmntl';
+    src: url('./assets/font/xprmntl.eot'); /* IE9 Compat Modes */
+    src: url('./assets/font/xprmntl.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('./assets/font/xprmntl.woff2') format('woff2'), /* Super Modern Browsers */ url('./assets/font/xprmntl.woff') format('woff'), /* Pretty Modern Browsers */ url('./assets/font/xprmntl.ttf') format('truetype'), /* Safari, Android, iOS */ url('./assets/font/xprmntl.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
 :root {
 	--color__background-body: #fff;
 	--color__accent: #03a9f4;
@@ -230,6 +235,8 @@ th {
 	--color__info: #00b9f2;
 	--color__warning: #f4cc31;
 	--color__danger: #e83337;
+    --xprmntl-font: 'xprmntl', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --regular-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 .site {
@@ -255,7 +262,7 @@ h6 {
 	margin-top: 0;
 	margin-bottom: 1.25rem;
 	color: var(--color__headings);
-	font-family: 'Open Sans', sans-serif;
+	font-family: var(--regular-font);
 	line-height: 1.1;
 }
 
@@ -309,16 +316,16 @@ big {
 a {
 	background-color: transparent;
 	color: var(--color__text-light);
-	text-decoration: none;
-	-webkit-transition: all 0.2s ease-in-out;
+	text-decoration: underline;
+    text-decoration-skip-ink: auto;
+    -webkit-transition: all 0.2s ease-in-out;
 	        transition: all 0.2s ease-in-out;
 }
 
 a:hover,
 a:active {
-	outline: 0;
+	
 	color: var(--color__accent);
-	text-decoration: none;
 }
 
 a:focus {
@@ -468,8 +475,7 @@ input[type='submit'] {
 	margin: 0;
 	padding: 0.75rem 1rem;
 	border: 1px solid var(--color__gray);
-	background-color: var(--color__gray);
-	background-image: none;
+	background: var(--color__gray) none;
 	color: var(--color__text);
 	vertical-align: middle;
 	text-align: center;
@@ -500,7 +506,7 @@ button:active,
 input[type='button']:active,
 input[type='reset']:active,
 input[type='submit']:active {
-	outline: 0;
+	
 	-webkit-box-shadow: inset 0 0 108px rgba(255, 255, 255, 0.5);
 	        box-shadow: inset 0 0 108px rgba(255, 255, 255, 0.5);
 	text-decoration: none;
@@ -566,8 +572,7 @@ input[type='tel'],
 textarea {
 	padding: 0.75rem 1rem;
 	width: 100%;
-	border: 1px solid;
-	border-color: var(--color__gray);
+	border: 1px solid var(--color__gray);
 	background-color: transparent;
 	-webkit-box-shadow: none;
 	        box-shadow: none;
@@ -593,7 +598,7 @@ input[type='time']:focus,
 input[type='week']:focus,
 input[type='tel']:focus,
 textarea:focus {
-	outline: 0;
+	
 	border-color: var(--color__accent);
 	-webkit-box-shadow: none;
 	        box-shadow: none;
@@ -860,11 +865,11 @@ p > video {
 
 .site-header {
 	position: relative;
-	padding: 2rem 1.5rem;
-}
+	/*padding: 2rem 1.5rem;*/
 
-.admin-bar .site-header.site-header--fixed {
-	top: 46px;
+    max-width: 648px;
+    margin: 0 auto;
+    padding: 4rem 0;
 }
 
 .site-branding {
@@ -915,24 +920,16 @@ a.custom-logo-link:focus {
 }
 
 .site-title a {
-	background-image: -webkit-gradient(linear, left top, right top, from(var(--color__headings)), to(var(--color__headings)));
-	background-image: linear-gradient(to right, var(--color__headings) 0%, var(--color__headings) 100%);
-	background-position: bottom 0 center;
-	background-size: 100% 2px;
-	background-repeat: repeat-x;
-	color: var(--color__headings);
-	text-decoration: none;
-	text-shadow: 0.05em 0 0 var(--color__background-body), -0.05em 0 0 var(--color__background-body), 0 0.05em 0 var(--color__background-body), 0 -0.05em 0 var(--color__background-body), 0.1em 0 0 var(--color__background-body), -0.1em 0 0 var(--color__background-body), 0 0.1em 0 var(--color__background-body), 0 -0.1em 0 var(--color__background-body);
-	-webkit-transition: all 0.2s ease-in-out;
-	        transition: all 0.2s ease-in-out;
+    font-family: var(--xprmntl-font);
+    color: var(--color__headings);
+    text-decoration-skip-ink: auto;
+	-webkit-transition: color 0.2s ease-in-out;
+	        transition: color 0.2s ease-in-out;
+    font-size: 3rem;
 }
 
 .site-title a:hover,
 .site-title a:focus {
-	outline: 0;
-	background-image: -webkit-gradient(linear, left top, right top, from(var(--color__accent)), to(var(--color__accent)));
-	background-image: linear-gradient(to right, var(--color__accent) 0%, var(--color__accent) 100%);
-	background-size: 100% 4px;
 	color: var(--color__accent);
 }
 
@@ -1034,10 +1031,9 @@ a.custom-logo-link:focus {
 
 .site-copy a:hover,
 .site-copy a:focus {
-	outline: 0;
+	
 	background-image: -webkit-gradient(linear, left top, right top, from(var(--color__accent)), to(var(--color__accent)));
 	background-image: linear-gradient(to right, var(--color__accent) 0%, var(--color__accent) 100%);
-	background-size: 100% 4px;
 	color: var(--color__accent);
 }
 
@@ -1048,7 +1044,14 @@ a.custom-logo-link:focus {
 }
 
 .primary-menu__list {
-	display: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -1098,7 +1101,7 @@ a.custom-logo-link:focus {
 }
 
 .primary-menu__list-item a:focus {
-	outline: 0;
+	
 	outline-offset: 0;
 	-webkit-box-shadow: 0 0 0 2px var(--color__accent);
 	        box-shadow: 0 0 0 2px var(--color__accent);
@@ -1161,7 +1164,7 @@ button.sub-menu-toggle:focus {
 
 .menu-toggle:hover,
 .menu-toggle:focus {
-	outline: 0;
+	
 	border: 1px solid var(--color__accent);
 	-webkit-box-shadow: none;
 	        box-shadow: none;
@@ -1415,7 +1418,6 @@ a.pagination__item:focus {
 
 .widget_rss cite {
 	display: block;
-	margin: 0;
 	margin: 1em 0;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -1492,8 +1494,7 @@ a.pagination__item:focus {
 }
 
 .widget-area-secondary {
-	margin: 0 auto;
-	margin-top: 4rem;
+	margin: 4rem auto 0;
 	max-width: 702px;
 	width: 100%;
 }
@@ -1622,8 +1623,7 @@ a.pagination__item:focus {
 
 .entry-meta-before-title .entry-meta-item.cat-links a:hover,
 .entry-meta-before-title .entry-meta-item.cat-links a:focus {
-	outline: 0;
-	background-size: 100% 4px;
+	
 	color: var(--color__accent);
 }
 
@@ -1678,8 +1678,7 @@ a.pagination__item:focus {
 
 .entry-author .author-url a:hover,
 .entry-author .author-url a:focus {
-	outline: 0;
-	background-size: 100% 4px;
+	
 	color: var(--color__accent);
 }
 
@@ -1767,8 +1766,7 @@ a.pagination__item:focus {
 
 .comment-author .fn a:hover,
 .comment-author .fn a:focus {
-	outline: 0;
-	background-size: 100% 4px;
+	
 	color: var(--color__accent);
 }
 
@@ -1828,8 +1826,7 @@ a.pagination__item:focus {
 
 .comment-content a:hover,
 .comment-content a:focus {
-	outline: 0;
-	background-size: 100% 4px;
+	
 	color: var(--color__accent);
 }
 
@@ -1919,8 +1916,7 @@ a.pagination__item:focus {
 
 .post-navigation .nav-links a:hover,
 .post-navigation .nav-links a:focus {
-	outline: 0;
-	background-size: 100% 4px;
+	
 	color: var(--color__accent);
 }
 
@@ -2019,8 +2015,7 @@ a.pagination__item:focus {
 
 .blogroll-item__content a:hover,
 .blogroll-item__content a:focus {
-	outline: 0;
-	background-size: 100% 4px;
+	
 	color: var(--color__accent);
 }
 
@@ -2035,7 +2030,8 @@ a.pagination__item:focus {
 	background-size: 100% 2px;
 	background-repeat: repeat-x;
 	color: var(--color__accent);
-	text-decoration: none;
+	text-decoration: underline;
+	text-decoration-skip-ink: auto;
 	text-shadow: 0.05em 0 0 var(--color__background-body), -0.05em 0 0 var(--color__background-body), 0 0.05em 0 var(--color__background-body), 0 -0.05em 0 var(--color__background-body), 0.1em 0 0 var(--color__background-body), -0.1em 0 0 var(--color__background-body), 0 0.1em 0 var(--color__background-body), 0 -0.1em 0 var(--color__background-body);
 	-webkit-transition: all 0.2s ease-in-out;
 	        transition: all 0.2s ease-in-out;
@@ -2043,8 +2039,7 @@ a.pagination__item:focus {
 
 .blogroll-item .more-link:hover,
 .blogroll-item .more-link:focus {
-	outline: 0;
-	background-size: 100% 4px;
+	
 	color: var(--color__accent);
 }
 
@@ -2088,16 +2083,14 @@ a.pagination__item:focus {
 	background-size: 100% 2px;
 	background-repeat: repeat-x;
 	color: var(--color__accent);
-	text-decoration: none;
-	text-shadow: 0.05em 0 0 var(--color__background-body), -0.05em 0 0 var(--color__background-body), 0 0.05em 0 var(--color__background-body), 0 -0.05em 0 var(--color__background-body), 0.1em 0 0 var(--color__background-body), -0.1em 0 0 var(--color__background-body), 0 0.1em 0 var(--color__background-body), 0 -0.1em 0 var(--color__background-body);
+    text-decoration-skip-ink: auto;
 	-webkit-transition: all 0.2s ease-in-out;
 	        transition: all 0.2s ease-in-out;
 }
 
 .entry-content p a:hover,
 .entry-content p a:focus {
-	outline: 0;
-	background-size: 100% 4px;
+	
 	color: var(--color__accent);
 }
 
@@ -2439,7 +2432,6 @@ input[type='submit'].wpcf7-submit {
 }
 
 .mc4wp-alert {
-	margin: 0 0 1.5rem;
 	margin: 2em 0;
 	padding: 0.75rem 1rem;
 	min-height: 3rem;
@@ -2561,8 +2553,7 @@ input[type='submit'].wpcf7-submit {
 
 	.entry-content .wp-caption.alignleft {
 		float: left;
-		margin: 0.5em 2em 1.5em 1.5em;
-		margin-left: calc( ( 100vw - 648px ) / 2);
+		margin: 0.5em 2em 1.5em calc((100vw - 648px) / 2);
 		padding-right: 0;
 		padding-left: 0;
 		max-width: 324px;
@@ -2570,8 +2561,7 @@ input[type='submit'].wpcf7-submit {
 
 	.entry-content .wp-caption.alignright {
 		float: right;
-		margin: 0.5em 1.5em 1.5em 2em;
-		margin-right: calc( ( 100vw - 648px ) / 2);
+		margin: 0.5em calc((100vw - 648px) / 2) 1.5em 2em;
 		padding-right: 0;
 		padding-left: 0;
 		max-width: 324px;
@@ -2602,29 +2592,7 @@ input[type='submit'].wpcf7-submit {
 		-ms-flex-pack: justify;
 		justify-content: space-between;
 		margin-bottom: 0;
-	}
-
-	.site-header.site-header--fixed {
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 9999;
-		padding: 1.5rem 3rem;
-		width: 100%;
-		background-color: var(--color__background-body);
-		-webkit-box-shadow: 0 0 3px var(--color__gray);
-		        box-shadow: 0 0 3px var(--color__gray);
-		opacity: 1;
-		-webkit-transition: 0.2s ease-in-out;
-		        transition: 0.2s ease-in-out;
-		-webkit-transform: translateY(0);
-		        transform: translateY(0);
-	}
-
-	.site-header.site-header--fixed.site-header--hidden {
-		opacity: 0;
-		-webkit-transform: translateY(-100%);
-		        transform: translateY(-100%);
+        width: 648px;
 	}
 
 	a.custom-logo-link img {
@@ -2879,19 +2847,13 @@ input[type='submit'].wpcf7-submit {
 	}
 }
 
-@media only screen and (min-width: 783px) {
-	.admin-bar .site-header.site-header--fixed {
-		top: 32px;
-	}
-}
-
 @media only screen and (min-width: 1024px) {
 	blockquote {
 		font-size: 2.125rem;
 	}
 
 	.site-header {
-		padding: 4rem 3rem;
+        width: 648px;
 	}
 
 	.site-footer {
@@ -2907,8 +2869,7 @@ input[type='submit'].wpcf7-submit {
 		justify-content: center;
 		padding-right: 1.5rem;
 		padding-left: 1.5rem;
-		max-width: 1140px;
-		max-width: calc( 1140px + 6em);
+		max-width: calc(1140px + 6em);
 	}
 
 	.blogroll {

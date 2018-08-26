@@ -863,10 +863,6 @@ p > video {
 	padding: 2rem 1.5rem;
 }
 
-.admin-bar .site-header.site-header--fixed {
-	top: 46px;
-}
-
 .site-branding {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -2606,29 +2602,6 @@ input[type='submit'].wpcf7-submit {
 		margin-bottom: 0;
 	}
 
-	.site-header.site-header--fixed {
-		position: fixed;
-		top: 0;
-		right: 0;
-		z-index: 9999;
-		padding: 1.5rem 3rem;
-		width: 100%;
-		background-color: var(--color__background-body);
-		-webkit-box-shadow: 0 0 3px var(--color__gray);
-		        box-shadow: 0 0 3px var(--color__gray);
-		opacity: 1;
-		-webkit-transition: 0.2s ease-in-out;
-		        transition: 0.2s ease-in-out;
-		-webkit-transform: translateY(0);
-		        transform: translateY(0);
-	}
-
-	.site-header.site-header--fixed.site-header--hidden {
-		opacity: 0;
-		-webkit-transform: translateY(-100%);
-		        transform: translateY(-100%);
-	}
-
 	a.custom-logo-link img {
 		height: 3rem;
 	}
@@ -2878,12 +2851,6 @@ input[type='submit'].wpcf7-submit {
 
 	blockquote.contact-form-submission {
 		margin: 0 0 1.25rem;
-	}
-}
-
-@media only screen and (min-width: 783px) {
-	.admin-bar .site-header.site-header--fixed {
-		top: 32px;
 	}
 }
 

@@ -250,9 +250,7 @@ function integer_entry_meta_index() {
 
 		echo '<div class="entry-meta entry-meta-index">';
 
-		integer_entry_categories();
-
-		integer_entry_date();
+//		integer_entry_categories();
 
 		integer_entry_pageviews();
 
@@ -284,9 +282,7 @@ function integer_entry_meta_before_content() {
 
 		echo '<div class="entry-meta entry-meta-before-content">';
 
-		integer_entry_author();
-
-		integer_entry_date();
+//		integer_entry_author();
 
 		integer_entry_comments_link();
 
@@ -303,9 +299,8 @@ function integer_entry_meta_after_content() {
 
 	echo '<footer class="entry-footer">';
 
+    integer_entry_date();
 	integer_entry_tags();
-
-	integer_entry_author_bio();
 
 	echo '</footer><!-- .entry-footer -->';
 

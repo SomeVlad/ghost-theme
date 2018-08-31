@@ -15,208 +15,8 @@ Tags:        one-column, custom-menu, editor-style, featured-images, microformat
  * Normalize
  */
 
-*,
-*:before,
-*:after {
-	-webkit-box-sizing: inherit;
-	        box-sizing: inherit;
-}
-
-html {
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
-	height: 100%;
-	font-size: 16px;
-	font-family: 'Open Sans', sans-serif;
-
-	-webkit-text-size-adjust: 100%;
-	    -ms-text-size-adjust: 100%;
-	-webkit-font-smoothing: antialiased;
-}
-
-body {
-	margin: 0;
-	height: 100%;
-	background-color: var(--color__background-body);
-	color: var(--color__text);
-	line-height: 1.5;
-}
-
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-	display: block;
-}
-
-audio,
-canvas,
-progress,
-video {
-	display: inline-block;
-	vertical-align: baseline;
-}
-
-audio:not([controls]) {
-	display: none;
-	height: 0;
-}
-
-[hidden],
-template {
-	display: none;
-}
-
-abbr[title],
-acronym {
-	border-bottom: 1px dotted;
-	cursor: help;
-}
-
-b,
-strong {
-	font-weight: bold;
-}
-
-dfn,
-em,
-i {
-	font-style: italic;
-}
-
-mark,
-ins {
-	background-color: var(--color__gray);
-	color: var(--color__text);
-	text-decoration: none;
-}
-
-small {
-	font-size: 0.75rem;
-}
-
-sub,
-sup {
-	position: relative;
-	vertical-align: baseline;
-	font-size: 75%;
-	line-height: 0;
-}
-
-sup {
-	top: -0.5em;
-}
-
-sub {
-	bottom: -0.25em;
-}
-
-img {
-	border: 0;
-}
-
-svg:not(:root) {
-	overflow: hidden;
-}
-
-figure {
-	margin: 0 0 1.5em 0;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-	margin: 0;
-	color: inherit;
-	font: inherit;
-}
-
-button {
-	overflow: visible;
-}
-
-button,
-select {
-	text-transform: none;
-}
-
-button,
-html input[type='button'],
-input[type='reset'],
-input[type='submit'] {
-	cursor: pointer;
-
-	-webkit-appearance: button;
-}
-
-button[disabled],
-html input[disabled] {
-	cursor: default;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-	padding: 0;
-	border: 0;
-}
-
-input {
-	line-height: normal;
-}
-
-input[type='checkbox'],
-input[type='radio'] {
-	padding: 0;
-}
-
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-	height: auto;
-}
-
-input[type='search']::-webkit-search-cancel-button,
-input[type='search']::-webkit-search-decoration {
-	-webkit-appearance: none;
-}
-
-fieldset {
-	margin: 0 0 1.5em;
-	padding: calc(0.75em - 2px) 1em;
-	border: 2px solid var(--color__gray);
-	border-radius: 3px;
-}
-
-legend {
-	padding: 0;
-	border: 0;
-}
-
-textarea {
-	overflow: auto;
-}
-
-optgroup {
-	font-weight: bold;
-}
-
-table {
-	border-spacing: 0;
-}
-
-td,
-th {
-	padding: 0;
-}
+@import './assets/css/prism.css';
+@import './assets/css/normalize.css';
 
 @font-face {
     font-family: 'xprmntl';
@@ -458,6 +258,13 @@ var {
 	background-color: rgba(0, 0, 0, 0.05);
 	white-space: nowrap;
 	font-family: Courier, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+}
+
+code {
+    white-space: pre;
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
 }
 
 /**
@@ -1017,16 +824,10 @@ a.custom-logo-link:focus {
 }
 
 .site-copy a {
-	background-image: -webkit-gradient(linear, left top, right top, from(var(--color__text-light)), to(var(--color__text-light)));
-	background-image: linear-gradient(to right, var(--color__text-light) 0%, var(--color__text-light) 100%);
-	background-position: bottom 0 center;
-	background-size: 100% 2px;
-	background-repeat: repeat-x;
-	color: var(--color__text-light);
-	text-decoration: none;
-	text-shadow: 0.05em 0 0 var(--color__background-body), -0.05em 0 0 var(--color__background-body), 0 0.05em 0 var(--color__background-body), 0 -0.05em 0 var(--color__background-body), 0.1em 0 0 var(--color__background-body), -0.1em 0 0 var(--color__background-body), 0 0.1em 0 var(--color__background-body), 0 -0.1em 0 var(--color__background-body);
-	-webkit-transition: all 0.2s ease-in-out;
-	        transition: all 0.2s ease-in-out;
+    color: var(--color__accent);
+    text-decoration-skip-ink: auto;
+    -webkit-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 .site-copy a:hover,
@@ -1609,16 +1410,10 @@ a.pagination__item:focus {
 }
 
 .entry-meta-before-title .entry-meta-item.cat-links a {
-	background-image: -webkit-gradient(linear, left top, right top, from(var(--color__accent)), to(var(--color__accent)));
-	background-image: linear-gradient(to right, var(--color__accent) 0%, var(--color__accent) 100%);
-	background-position: bottom 0 center;
-	background-size: 100% 2px;
-	background-repeat: repeat-x;
-	color: var(--color__accent);
-	text-decoration: none;
-	text-shadow: 0.05em 0 0 var(--color__background-body), -0.05em 0 0 var(--color__background-body), 0 0.05em 0 var(--color__background-body), 0 -0.05em 0 var(--color__background-body), 0.1em 0 0 var(--color__background-body), -0.1em 0 0 var(--color__background-body), 0 0.1em 0 var(--color__background-body), 0 -0.1em 0 var(--color__background-body);
-	-webkit-transition: all 0.2s ease-in-out;
-	        transition: all 0.2s ease-in-out;
+    color: var(--color__accent);
+    text-decoration-skip-ink: auto;
+    -webkit-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 .entry-meta-before-title .entry-meta-item.cat-links a:hover,
@@ -1664,16 +1459,10 @@ a.pagination__item:focus {
 }
 
 .entry-author .author-url a {
-	background-image: -webkit-gradient(linear, left top, right top, from(var(--color__accent)), to(var(--color__accent)));
-	background-image: linear-gradient(to right, var(--color__accent) 0%, var(--color__accent) 100%);
-	background-position: bottom 0 center;
-	background-size: 100% 2px;
-	background-repeat: repeat-x;
-	color: var(--color__accent);
-	text-decoration: none;
-	text-shadow: 0.05em 0 0 var(--color__background-body), -0.05em 0 0 var(--color__background-body), 0 0.05em 0 var(--color__background-body), 0 -0.05em 0 var(--color__background-body), 0.1em 0 0 var(--color__background-body), -0.1em 0 0 var(--color__background-body), 0 0.1em 0 var(--color__background-body), 0 -0.1em 0 var(--color__background-body);
-	-webkit-transition: all 0.2s ease-in-out;
-	        transition: all 0.2s ease-in-out;
+    color: var(--color__accent);
+    text-decoration-skip-ink: auto;
+    -webkit-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 .entry-author .author-url a:hover,
@@ -1752,16 +1541,10 @@ a.pagination__item:focus {
 }
 
 .comment-author .fn a {
-	background-image: -webkit-gradient(linear, left top, right top, from(var(--color__accent)), to(var(--color__accent)));
-	background-image: linear-gradient(to right, var(--color__accent) 0%, var(--color__accent) 100%);
-	background-position: bottom 0 center;
-	background-size: 100% 2px;
-	background-repeat: repeat-x;
-	color: var(--color__accent);
-	text-decoration: none;
-	text-shadow: 0.05em 0 0 var(--color__background-body), -0.05em 0 0 var(--color__background-body), 0 0.05em 0 var(--color__background-body), 0 -0.05em 0 var(--color__background-body), 0.1em 0 0 var(--color__background-body), -0.1em 0 0 var(--color__background-body), 0 0.1em 0 var(--color__background-body), 0 -0.1em 0 var(--color__background-body);
-	-webkit-transition: all 0.2s ease-in-out;
-	        transition: all 0.2s ease-in-out;
+    color: var(--color__accent);
+    text-decoration-skip-ink: auto;
+    -webkit-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 .comment-author .fn a:hover,
@@ -1811,17 +1594,10 @@ a.pagination__item:focus {
 }
 
 .comment-content a {
-	background-image: -webkit-gradient(linear, left top, right top, from(var(--color__accent)), to(var(--color__accent)));
-	background-image: linear-gradient(to right, var(--color__accent) 0%, var(--color__accent) 100%);
-	background-position: bottom 0 center;
-	background-size: 100% 2px;
-	background-repeat: repeat-x;
-	color: var(--color__accent);
-	text-decoration: none;
-	text-shadow: 0.05em 0 0 var(--color__background-body), -0.05em 0 0 var(--color__background-body), 0 0.05em 0 var(--color__background-body), 0 -0.05em 0 var(--color__background-body), 0.1em 0 0 var(--color__background-body), -0.1em 0 0 var(--color__background-body), 0 0.1em 0 var(--color__background-body), 0 -0.1em 0 var(--color__background-body);
-	word-wrap: break-word;
-	-webkit-transition: all 0.2s ease-in-out;
-	        transition: all 0.2s ease-in-out;
+    color: var(--color__accent);
+    text-decoration-skip-ink: auto;
+    -webkit-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 .comment-content a:hover,
@@ -1902,16 +1678,10 @@ a.pagination__item:focus {
 }
 
 .post-navigation .nav-links a {
-	background-image: -webkit-gradient(linear, left top, right top, from(var(--color__accent)), to(var(--color__accent)));
-	background-image: linear-gradient(to right, var(--color__accent) 0%, var(--color__accent) 100%);
-	background-position: bottom 0 center;
-	background-size: 100% 2px;
-	background-repeat: repeat-x;
-	color: var(--color__accent);
-	text-decoration: none;
-	text-shadow: 0.05em 0 0 var(--color__background-body), -0.05em 0 0 var(--color__background-body), 0 0.05em 0 var(--color__background-body), 0 -0.05em 0 var(--color__background-body), 0.1em 0 0 var(--color__background-body), -0.1em 0 0 var(--color__background-body), 0 0.1em 0 var(--color__background-body), 0 -0.1em 0 var(--color__background-body);
-	-webkit-transition: all 0.2s ease-in-out;
-	        transition: all 0.2s ease-in-out;
+    color: var(--color__accent);
+    text-decoration-skip-ink: auto;
+    -webkit-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 .post-navigation .nav-links a:hover,
@@ -1941,7 +1711,7 @@ a.pagination__item:focus {
 /* Archive. */
 
 .blogroll {
-	padding: 0 1.5rem;
+	padding: 0 3rem;
 }
 
 .blogroll__wrap {
@@ -1977,6 +1747,15 @@ a.pagination__item:focus {
 	margin-top: 8rem;
 }
 
+.blogroll-item {
+    border: 3px solid black;
+    padding: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
 .blogroll-item__thumbnail {
 	display: block;
 	margin-bottom: 2rem;
@@ -2001,16 +1780,10 @@ a.pagination__item:focus {
 }
 
 .blogroll-item__content a {
-	background-image: -webkit-gradient(linear, left top, right top, from(var(--color__accent)), to(var(--color__accent)));
-	background-image: linear-gradient(to right, var(--color__accent) 0%, var(--color__accent) 100%);
-	background-position: bottom 0 center;
-	background-size: 100% 2px;
-	background-repeat: repeat-x;
-	color: var(--color__accent);
-	text-decoration: none;
-	text-shadow: 0.05em 0 0 var(--color__background-body), -0.05em 0 0 var(--color__background-body), 0 0.05em 0 var(--color__background-body), 0 -0.05em 0 var(--color__background-body), 0.1em 0 0 var(--color__background-body), -0.1em 0 0 var(--color__background-body), 0 0.1em 0 var(--color__background-body), 0 -0.1em 0 var(--color__background-body);
-	-webkit-transition: all 0.2s ease-in-out;
-	        transition: all 0.2s ease-in-out;
+    color: var(--color__accent);
+	text-decoration-skip-ink: auto;
+	-webkit-transition: color 0.2s ease-in-out;
+	        transition: color 0.2s ease-in-out;
 }
 
 .blogroll-item__content a:hover,
@@ -2024,17 +1797,10 @@ a.pagination__item:focus {
 }
 
 .blogroll-item .more-link {
-	background-image: -webkit-gradient(linear, left top, right top, from(var(--color__accent)), to(var(--color__accent)));
-	background-image: linear-gradient(to right, var(--color__accent) 0%, var(--color__accent) 100%);
-	background-position: bottom 0 center;
-	background-size: 100% 2px;
-	background-repeat: repeat-x;
-	color: var(--color__accent);
-	text-decoration: underline;
-	text-decoration-skip-ink: auto;
-	text-shadow: 0.05em 0 0 var(--color__background-body), -0.05em 0 0 var(--color__background-body), 0 0.05em 0 var(--color__background-body), 0 -0.05em 0 var(--color__background-body), 0.1em 0 0 var(--color__background-body), -0.1em 0 0 var(--color__background-body), 0 0.1em 0 var(--color__background-body), 0 -0.1em 0 var(--color__background-body);
-	-webkit-transition: all 0.2s ease-in-out;
-	        transition: all 0.2s ease-in-out;
+    color: var(--color__accent);
+    text-decoration-skip-ink: auto;
+    -webkit-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
 }
 
 .blogroll-item .more-link:hover,
@@ -2101,8 +1867,7 @@ a.pagination__item:focus {
 }
 
 .entry-content pre {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+    margin: 2rem auto;
 	max-width: 648px;
 }
 
@@ -2262,6 +2027,7 @@ a.pagination__item:focus {
 	padding-right: 1.5rem;
 	padding-left: 1.5rem;
 	max-width: 702px;
+    display: flex;
 }
 
 /* 404 */
@@ -2788,13 +2554,16 @@ input[type='submit'].wpcf7-submit {
 		font-size: 2.125em;
 	}
 
-	.single .site-main,
-	.page .site-main {
+	.single .site-main {
 		padding-top: 4rem;
 	}
 
+    #page .site-main {
+        padding-top: 0;
+    }
+
 	.entry-content {
-		margin: 4rem 0 0;
+		margin: 3rem 0 0;
 	}
 
 	.entry-content > h1,
@@ -2831,7 +2600,7 @@ input[type='submit'].wpcf7-submit {
 	}
 
 	.entry-thumbnail {
-		margin: 4rem 0 0;
+		margin: 3rem 0 0;
 	}
 
 	.widget-area-after-content {
@@ -2839,7 +2608,7 @@ input[type='submit'].wpcf7-submit {
 	}
 
 	.entry-footer {
-		margin-top: 8rem;
+		margin-top: 0;
 	}
 
 	blockquote.contact-form-submission {

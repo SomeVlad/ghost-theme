@@ -222,6 +222,14 @@ function integer_scripts() {
 		true
 	);
 
+    wp_enqueue_script(
+        'hmmm',
+        get_template_directory_uri() . '/assets/js/prism.js',
+        false,
+        INTEGER_VERSION,
+        true
+    );
+
 	$integer_i18n_strings = array(
 		'menu' => esc_html__( 'Menu', 'integer' ),
 		'close' => esc_html__( 'Close', 'integer' ),

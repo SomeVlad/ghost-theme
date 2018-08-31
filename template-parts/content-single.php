@@ -9,7 +9,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php integer_entry_meta_before_title(); ?>
+	<?php /** integer_entry_meta_before_title(); */ ?>
 
 	<header class="entry-header">
 
@@ -17,7 +17,7 @@
 
 	</header><!-- .entry-header -->
 
-	<?php integer_entry_meta_before_content(); ?>
+	<?php /** integer_entry_meta_before_content(); */ ?>
 
 	<?php integer_post_thumbnail(); ?>
 

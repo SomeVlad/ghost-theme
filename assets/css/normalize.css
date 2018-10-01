@@ -60,8 +60,9 @@ template {
 
 abbr[title],
 acronym {
-    border-bottom: 1px dotted;
+    border-bottom: 1px dotted #333;
     cursor: help;
+    text-decoration: none;
 }
 
 b,

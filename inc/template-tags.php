@@ -108,8 +108,7 @@ function integer_entry_date() {
 	);
 
 	$html = sprintf(
-		'<span class="entry-meta-item posted-on"><a href="%s" rel="bookmark">%s</a></span>',
-		esc_url( get_permalink() ),
+		'<span class="entry-meta-item posted-on">%s</span>',
 		$time
 	);
 
@@ -299,8 +298,8 @@ function integer_entry_meta_after_content() {
 
 	echo '<footer class="entry-footer">';
 
-    integer_entry_date();
 	integer_entry_tags();
+    integer_entry_date();
 
 	echo '</footer><!-- .entry-footer -->';
 

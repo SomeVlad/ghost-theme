@@ -37,4 +37,6 @@
 
 	</div>
 
+    <?php integer_entry_meta_after_content(); ?>
+
 </article>

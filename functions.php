@@ -165,7 +165,7 @@ function integer_fonts_url() {
 	 * supported by Open Sans, translate this to 'off'.
 	 * Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'integer' ) ) {
+	if ( 'on' !== _x( 'on', 'Open Sans font: on or off', 'integer' ) ) {
 		$fonts[] = 'Open Sans:400,400i,700,700i,800,800i';
 	}
 

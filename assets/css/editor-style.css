@@ -18,7 +18,7 @@ html {
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	font-size: 18px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: sans-serif;
 
 	-webkit-text-size-adjust: 100%;
 	    -ms-text-size-adjust: 100%;
@@ -182,7 +182,7 @@ h6 {
 	margin-top: 0;
 	margin-bottom: 1.25rem;
 	color: var(--color__headings);
-	font-family: 'Open Sans', sans-serif;
+	font-family: sans-serif;
 	line-height: 1.1;
 }
 
@@ -262,7 +262,7 @@ blockquote {
 	quotes: '' '';
 	font-style: italic;
 	font-size: 1.5rem;
-	font-family: 'Open Sans', sans-serif;
+	font-family: sans-serif;
 	line-height: 1.125;
 }
 
@@ -282,7 +282,7 @@ blockquote cite {
 	letter-spacing: 2px;
 	font-style: normal;
 	font-size: 0.625rem;
-	font-family: 'Open Sans', sans-serif;
+	font-family: sans-serif;
 	line-height: 1.125;
 }
 
@@ -342,8 +342,7 @@ dd {
 
 .mce-item-table td,
 .mce-item-table th {
-	border-bottom: 1px solid;
-	border-bottom-color: var(--color__gray);
+	border-bottom: 1px solid var(--color__gray);
 }
 
 /* Tables */
@@ -502,7 +501,7 @@ p > video {
 
 .mce-content-body .wp-playlist-item,
 .mce-content-body .wp-playlist-item-length {
-	padding: em_minus_px(0.75em, 2px) 0.75em 0.75em;
+	padding: calc(0.75em - 2px) 0.75em 0.75em;
 }
 
 .mce-content-body .wp-playlist-item {
@@ -518,8 +517,7 @@ p > video {
 }
 
 .mce-content-body .wp-playlist-playing {
-	border-bottom: 1px solid;
-	border-bottom-color: var(--color__gray);
+	border-bottom: 1px solid var(--color__gray);
 	background-color: var(--color__gray);
 	font-weight: normal;
 }
@@ -545,7 +543,7 @@ p > video {
 	font-weight: normal;
 	font-style: normal;
 	font-size: 0.75rem;
-	font-family: 'Open Sans', sans-serif;
+	font-family: sans-serif;
 	line-height: 2rem;
 }
 
